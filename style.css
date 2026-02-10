@@ -5,12 +5,54 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/*ESTADO ESTILOS*/
+#status {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde7f0;
+}
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffd1e8;
+    border-top: 5px solid #ff5fa2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* FONDO GENERAL */
 body {
     background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
     min-height: 100vh;
     padding: 30px;
 }
+
+/*TITULOOO*/
+.main-title {
+    text-align: center;
+    color: #ff3489;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
 
 /* DIV PRINCIPAL */
 #app {
@@ -26,23 +68,34 @@ body {
     border-radius: 18px;
     padding: 16px;
     text-align: center;
-    display: flex;          
-    flex-direction: column;     
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    height: 430px;         
+    height: 430px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #app div:hover {
     transform: translateY(-6px);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 14px 35px rgba(255, 13, 106, 0.099);
 }
+
+/*ERROR ESTADO*/
+.error-msg {
+    justify-content: center;
+    align-items: center;
+    color: #69002c;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 230px;
+}
+
 
 h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #ff4ea9;
+    color: rgba(224, 27, 128, 0.753);
 }
 
 img {
@@ -59,8 +112,8 @@ p {
     margin-bottom: 12px;
 
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 3;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

@@ -1,14 +1,42 @@
+console.log("Hiiii worlddd")
+
 const getAnimes = async () => {
+    const status = document.querySelector("#status")
+    const container = document.querySelector("#app")
 
-    // link de animes api :3 !!!
-    const response = await fetch(
-        "https://api.jikan.moe/v4/anime"
-    )
+    // Loadinggg :3
 
-    if (response.ok) {
+    const showLoading = () => {
+        status.style.display = "flex"
+    }
+
+    const hideLoading = () => {
+        status.style.display = "none"
+    }
+
+    try {
+        //Fecth animeeee 
+        showLoading()
+        const response = await fetch("https://api.jikan.moe/v4/anime")
+
+        // Estado de errore 
+        if (!response.ok) {
+            throw new Error("API error")
+        }
+
         const result = await response.json()
         const animes = result.data
-        const container = document.querySelector('#app')
+
+        hideLoading()
+
+        // Empty state
+        if (animes.length === 0) {
+            container.innerHTML = `<p class="error-msg">No animes found ( ˶°ㅁ°) !!</p>`
+            return
+        }
+
+        //los resultados de las cards
+        status.innerHTML = ""
 
         for (let anime of animes) {
             const card = document.createElement("div")
@@ -37,9 +65,9 @@ const getAnimes = async () => {
             container.appendChild(card)
         }
 
-        console.log(animes)
-    } else {
-        console.error("Failed to fetch animes ;(")
+    } catch (error) {
+        hideLoading()
+        container.innerHTML = `<p class="error-msg">Something went wrong, try again :(</p>`
     }
 }
 
