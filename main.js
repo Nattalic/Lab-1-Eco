@@ -1,6 +1,6 @@
 const getAnimes = async () => {
 
-    // link de animes api !!!
+    // link de animes api :3 !!!
     const response = await fetch(
         "https://api.jikan.moe/v4/anime"
     )
