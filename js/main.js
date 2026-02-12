@@ -1,5 +1,3 @@
-console.log("Hiiii worlddd")
-
 const getAnimes = async () => {
     const status = document.querySelector("#status")
     const container = document.querySelector("#app")

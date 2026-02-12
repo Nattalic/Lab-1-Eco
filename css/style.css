@@ -14,9 +14,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde7f0;
+    background: linear-gradient(135deg, #fff4f8, #ffe8fa);
 }
-
 
 .loader {
     width: 50px;
@@ -39,7 +38,7 @@
 
 /* FONDO GENERAL */
 body {
-    background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
+    background: linear-gradient(135deg, #fff4f8, #ffe8fa);
     min-height: 100vh;
     padding: 30px;
 }

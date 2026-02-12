@@ -1,0 +1,182 @@
+    /*DIV TODO*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .detail-page {
+        display: block;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .detail-page::before {
+        content: "";
+        display: block;
+        height: 10px;
+    }
+
+    .detail-page {
+        background: linear-gradient(135deg, #fff4f8, #ffe8fa);
+        border-radius: 18px;
+        padding: 22px;
+    }
+
+    .detail-page h2 {
+        text-align: center;
+        color: #ff3489;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .detail-page img {
+        display: block;
+        margin: 0 auto 16px auto;
+        width: 260px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .detail-page h3 {
+        color: rgba(224, 27, 128, 0.85);
+        font-size: 1.1rem;
+        margin: 16px 0 8px 0;
+    }
+
+    .detail-page ul {
+        margin: 0 0 14px 0;
+        padding-left: 20px;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .detail-page p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: 0;
+        -webkit-box-orient: unset;
+        overflow: visible;
+    }
+
+    .detail-page p b {
+        color: #ff3489;
+    }
+
+    .detail-page button {
+        display: block;
+        margin: 18px auto 0 auto;
+        padding: 10px 18px;
+        border-radius: 22px;
+        font-weight: 600;
+    }
+
+
+    /*ESTADO ESTILOS*/
+    .error-msg {
+        justify-content: center;
+        align-items: center;
+        color: #69002c;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-top: 350px;
+    }
+
+    .empty-state {
+        justify-content: center;
+        align-items: center;
+        color: #69002c;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-top: 350px;
+    }
+
+    #status {
+        position: fixed;
+        inset: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #fff4f8, #f3e8ff);
+    }
+
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ffd1e8;
+        border-top: 5px solid #ff5fa2;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /*BOTON DE BACK*/
+    .detail-page button {
+        position: absolute;
+        top: 20px;
+        left: 60px;
+        background: linear-gradient(135deg, #ff7eb3, #ff65a3);
+        border: none;
+        width: 120px;
+        border-radius: 18px;
+        padding: 8px 16px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .detail-page button:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 15px rgba(255, 101, 163, 0.4);
+    }
+
+    .detail-page .date-start {
+        color: rgba(24, 4, 17, 0.627);
+    }
+
+    .detail-page .date-end {
+        color: rgba(24, 4, 17, 0.627);
+    }
+
+    .date-start {
+        background: #ffe3f1;
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin-top: 30px;
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .date-end {
+        background: #ffe3f1;
+        padding: 8px 12px;
+        border-radius: 12px;
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
