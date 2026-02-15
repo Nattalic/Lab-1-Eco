@@ -24,6 +24,7 @@ const getAnimes = async () => {
 
         const result = await response.json()
         const animes = result.data
+        console.log(animes)
 
         hideLoading()
 
