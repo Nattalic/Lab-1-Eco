@@ -20,7 +20,7 @@ const getAnimeDetail = async () => {
         //Traer fetch de naimesss
         const response = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`)
 
-        //empty state
+        //
         if (response.status === 404) {
             hideLoading()
             status.style.display = "flex"
@@ -42,6 +42,13 @@ const getAnimeDetail = async () => {
         `
 
         hideLoading()
+
+        // Empty state
+        if (!anime) {
+            status.style.display = "flex"
+            status.innerHTML = `<p class="error-msg">Anime not found ( ˶°ㅁ°) !!</p>`
+            return
+        }
 
 
         const title = document.createElement("h2")
