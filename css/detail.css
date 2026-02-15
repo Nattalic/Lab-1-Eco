@@ -16,6 +16,7 @@
     }
 
 
+
     .detail-page {
         display: block;
         max-width: 1000px;
@@ -102,7 +103,7 @@
         color: #69002c;
         font-size: 1.1rem;
         text-align: center;
-        margin-top: 230px;
+        margin-top: 10px;
     }
 
 
@@ -112,19 +113,22 @@
         color: #69002c;
         font-size: 1.1rem;
         text-align: center;
-        margin-top: 350px;
+        margin-top: 30px;
     }
 
     #status {
         position: fixed;
         inset: 0;
+        display: none;
         justify-content: center;
         align-items: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #fff4f8, #f3e8ff);
+        flex-direction: column;
+        gap: 14px;
+        background: rgba(255, 244, 248, 0.6);
+        backdrop-filter: blur(300px);
+        z-index: 9999;
     }
+
 
     .loader {
         width: 50px;

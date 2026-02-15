@@ -1,6 +1,7 @@
 const getAnimes = async () => {
     const status = document.querySelector("#status")
     const container = document.querySelector("#app")
+    const title = document.querySelector(".main-title")
 
     // Loadinggg :3
 
@@ -66,6 +67,7 @@ const getAnimes = async () => {
 
     } catch (error) {
         hideLoading()
+        title.style.display = "none"
         container.innerHTML = `<p class="error-msg">Something went wrong, try again ( ˶°ㅁ°) !!</p>`
     }
 }

@@ -20,6 +20,15 @@ const getAnimeDetail = async () => {
         //Traer fetch de naimesss
         const response = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`)
 
+        //empty state
+        if (response.status === 404) {
+            hideLoading()
+            status.style.display = "flex"
+            status.innerHTML = `<p class="error-msg">Anime not found ( ˶°ㅁ°) !!</p>`
+            return
+        }
+
+
         if (!response.ok) {
             throw new Error("API error")
         }
@@ -34,12 +43,6 @@ const getAnimeDetail = async () => {
 
         hideLoading()
 
-        // Empty state
-        if (!anime) {
-            container.className = "empty-state"
-            container.innerHTML = `<p class="error-msg">Anime not found ( ˶°ㅁ°) !!</p>`
-            return
-        }
 
         const title = document.createElement("h2")
         title.innerHTML = anime.title
@@ -73,7 +76,6 @@ const getAnimeDetail = async () => {
 
         const synopsis = document.createElement("p")
         // Empty state
-
         synopsis.innerHTML = anime.synopsis || "No synopsis available ( ˶°ㅁ°) !!"
 
         const started = document.createElement("p")
@@ -103,8 +105,10 @@ const getAnimeDetail = async () => {
 
     } catch (error) {
         hideLoading()
-        container.innerHTML = `<p class="error-msg">Something went wrong, try again :(</p>`
+        status.style.display = "flex"
+        status.innerHTML = `<p class="error-msg">Something went wrong, try again ( ˶°ㅁ°) !!</p>`
     }
+
 }
 
 getAnimeDetail()
