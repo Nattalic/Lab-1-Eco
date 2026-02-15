@@ -26,12 +26,17 @@ const getAnimeDetail = async () => {
 
         const result = await response.json()
         const anime = result.data
-        console.log(anime)
+
+        document.body.style.backgroundImage = `
+        linear-gradient(rgba(0, 0, 0, 0.74), rgba(27, 27, 27, 0.34)),
+        url(${anime.images.jpg.large_image_url})
+        `
 
         hideLoading()
 
         // Empty state
         if (!anime) {
+            container.className = "empty-state"
             container.innerHTML = `<p class="error-msg">Anime not found ( ˶°ㅁ°) !!</p>`
             return
         }
@@ -68,7 +73,7 @@ const getAnimeDetail = async () => {
 
         const synopsis = document.createElement("p")
         // Empty state
-        
+
         synopsis.innerHTML = anime.synopsis || "No synopsis available ( ˶°ㅁ°) !!"
 
         const started = document.createElement("p")

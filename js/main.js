@@ -66,7 +66,7 @@ const getAnimes = async () => {
 
     } catch (error) {
         hideLoading()
-        container.innerHTML = `<p class="error-msg">Something went wrong, try again :(</p>`
+        container.innerHTML = `<p class="error-msg">Something went wrong, try again ( ˶°ㅁ°) !!</p>`
     }
 }
 
